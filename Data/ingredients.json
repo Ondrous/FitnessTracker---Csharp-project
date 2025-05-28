@@ -1,0 +1,101 @@
+[
+  {
+    "Id": 1,
+    "Name": "Chicken Breast",
+    "CaloriesPer100g": 165,
+    "ProteinPer100g": 31,
+    "CarbsPer100g": 0,
+    "FatPer100g": 3.6,
+    "FiberPer100g": 0
+  },
+  {
+    "Id": 2,
+    "Name": "Brown Rice",
+    "CaloriesPer100g": 111,
+    "ProteinPer100g": 2.6,
+    "CarbsPer100g": 23,
+    "FatPer100g": 0.9,
+    "FiberPer100g": 1.8
+  },
+  {
+    "Id": 3,
+    "Name": "Broccoli",
+    "CaloriesPer100g": 34,
+    "ProteinPer100g": 2.8,
+    "CarbsPer100g": 7,
+    "FatPer100g": 0.4,
+    "FiberPer100g": 2.6
+  },
+  {
+    "Id": 4,
+    "Name": "Banana",
+    "CaloriesPer100g": 89,
+    "ProteinPer100g": 1.1,
+    "CarbsPer100g": 23,
+    "FatPer100g": 0.3,
+    "FiberPer100g": 2.6
+  },
+  {
+    "Id": 5,
+    "Name": "Oats",
+    "CaloriesPer100g": 389,
+    "ProteinPer100g": 16.9,
+    "CarbsPer100g": 66.3,
+    "FatPer100g": 6.9,
+    "FiberPer100g": 10.6
+  },
+  {
+    "Id": 6,
+    "Name": "Salmon",
+    "CaloriesPer100g": 208,
+    "ProteinPer100g": 25.4,
+    "CarbsPer100g": 0,
+    "FatPer100g": 12.4,
+    "FiberPer100g": 0
+  },
+  {
+    "Id": 7,
+    "Name": "Sweet Potato",
+    "CaloriesPer100g": 86,
+    "ProteinPer100g": 1.6,
+    "CarbsPer100g": 20.1,
+    "FatPer100g": 0.1,
+    "FiberPer100g": 3
+  },
+  {
+    "Id": 8,
+    "Name": "Spinach",
+    "CaloriesPer100g": 23,
+    "ProteinPer100g": 2.9,
+    "CarbsPer100g": 3.6,
+    "FatPer100g": 0.4,
+    "FiberPer100g": 2.2
+  },
+  {
+    "Id": 9,
+    "Name": "Greek Yogurt",
+    "CaloriesPer100g": 59,
+    "ProteinPer100g": 10,
+    "CarbsPer100g": 3.6,
+    "FatPer100g": 0.4,
+    "FiberPer100g": 0
+  },
+  {
+    "Id": 10,
+    "Name": "Almonds",
+    "CaloriesPer100g": 579,
+    "ProteinPer100g": 21.2,
+    "CarbsPer100g": 21.6,
+    "FatPer100g": 49.9,
+    "FiberPer100g": 12.5
+  },
+  {
+    "Id": 11,
+    "Name": "Rice",
+    "CaloriesPer100g": 40,
+    "ProteinPer100g": 3,
+    "CarbsPer100g": 37,
+    "FatPer100g": 0,
+    "FiberPer100g": 0
+  }
+]

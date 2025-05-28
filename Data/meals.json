@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "Name": "Chicken and rice",
+    "Ingredients": [
+      {
+        "IngredientId": 1,
+        "Grams": 350
+      },
+      {
+        "IngredientId": 11,
+        "Grams": 250
+      },
+      {
+        "IngredientId": 3,
+        "Grams": 110
+      }
+    ]
+  }
+]
