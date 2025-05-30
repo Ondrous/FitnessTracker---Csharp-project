@@ -12,6 +12,8 @@ FitnessTracker is a comprehensive nutrition and diet tracking application that h
 
 
 ## 1. Ingredient Management
+![image](https://github.com/user-attachments/assets/b78045f5-ca39-4af6-9e92-5754e48a4363)
+
 
 ### Adding New Ingredients
 - Click **"Manage Ingredients"** from main menu
@@ -39,6 +41,8 @@ FitnessTracker is a comprehensive nutrition and diet tracking application that h
   - Fat: 9 calories per gram
 
 ## 2. Meal Creation
+![image](https://github.com/user-attachments/assets/a5e2c1d1-ab1d-4687-86ff-09450ae31608)
+
 
 ### Creating Meals
 - Click **"Manage Meals"** from main menu
@@ -63,6 +67,7 @@ FitnessTracker is a comprehensive nutrition and diet tracking application that h
 - **Total Weight**: Shows meal's total weight in grams
 
 ## 3. Diet Tracking
+![image](https://github.com/user-attachments/assets/50e0eb0c-7067-4076-a4e7-d5402a8fd013)
 
 ### Recording Food Intake
 - Click **"Track Diet"** from main menu
@@ -84,6 +89,8 @@ FitnessTracker is a comprehensive nutrition and diet tracking application that h
 - **Real-time Updates**: Summary updates automatically when entries change
 
 ## 4. Statistics and Analysis
+![image](https://github.com/user-attachments/assets/501e8957-2339-44f1-b625-5f97929ac463)
+
 
 ### Viewing Statistics
 - Click **"View Statistics"** from main menu
