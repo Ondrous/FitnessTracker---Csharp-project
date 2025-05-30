@@ -1,0 +1,21 @@
+Specifikace zápočtového programu do předmětu NPRG035
+Ondřej Stengl
+
+FitnessTracker  
+FitnessTracker je aplikace určená k podpoře uživatelů při sledování jejich jídelníčku a výživových hodnot konzumovaných potravin. Hlavním cílem této aplikace je poskytovat uživateli možnost sledovat a analyzovat jejich stravu, což jim pomůže dosáhnout jejich fitness cílů. Aplikace bude obsahovat jednoduché grafické uživatelské rozhraní (GUI) pro pohodlné zadávání a prohlížení informací.
+
+ Motivace  
+Mnoho lidí má potíže s sledováním své stravy a dosažením svých výživových cílů. FitnessTracker pomáhá uživatelům lépe porozumět jejich výživovým potřebám a zlepšit jejich stravovací návyky tím, že poskytuje nástroje pro sledování a analýzu konzumovaných potravin.
+
+ Funkcionality   
+1. Vyhledávání surovin a jídel: Uživatel může vyhledávat jednotlivé suroviny nebo jídla a zobrazit tabulku s nutričními hodnotami a makroživinami.
+2. Přidávání nových surovin a jídel: Uživatel může přidávat nové suroviny a vytvářet nová jídla kombinací těchto surovin.
+3. Sledování jídelníčku: Uživatel může zadávat jídla, která snědl během dne, a sledovat svůj jídelníček.
+4. Zobrazování statistik: Aplikace poskytuje statistiky o konzumovaných potravinách za určité časové období.
+
+Technické Řešení  
+- Databáze: Záznamy se budou uchvovávat v .json fomratu.
+- GUI: Implementace jednoduchého grafického uživatelského rozhraní pomocí Windows Forms.
+
+Použití Aplikace  
+Aplikace bude spuštěna jako desktopová aplikace s grafickým uživatelským rozhraním. Uživatel bude moci vyhledávat suroviny a jídla, přidávat nové položky, zadávat svůj jídelníček a prohlížet si statistiky svého stravování.
