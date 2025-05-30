@@ -8,6 +8,9 @@ FitnessTracker is a comprehensive nutrition and diet tracking application that h
 - Navigate between sections using the menu buttons
 - Use "<- Go Back" buttons to return to the main menu
 
+![image](https://github.com/user-attachments/assets/286a313e-445b-4a68-94a8-4fd8674cfe5a)
+
+
 ## 1. Ingredient Management
 
 ### Adding New Ingredients
