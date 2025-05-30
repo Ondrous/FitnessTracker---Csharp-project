@@ -115,15 +115,6 @@ public class DietService
 **Current**: JSON file storage
 **Extension Point**: Replace `JsonDataManager` with database implementation
 
-```csharp
-public interface IDataManager
-{
-    List<Ingredient> LoadIngredients();
-    void SaveIngredients(List<Ingredient> ingredients);
-    // ... other methods
-}
-```
-
 #### 2. New Nutrition Calculations
 **Extension Point**: Add methods to `Meal` model and `MealService`
 
