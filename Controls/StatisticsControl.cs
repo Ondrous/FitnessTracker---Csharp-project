@@ -6,6 +6,12 @@ using FitnessTracker.Services;
 
 namespace FitnessTracker.Controls
 {
+    /// <summary>
+    /// User interface control for viewing nutrition statistics and reports over time periods.
+    /// Allows users to select date ranges and generates daily nutrition summaries with
+    /// totals and averages. Uses DietService to get diet entry data and calculate
+    /// comprehensive nutrition statistics for analysis and tracking progress.
+    /// </summary>
     public partial class StatisticsControl : UserControl
     {
         private readonly DietService _dietService;

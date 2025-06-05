@@ -7,6 +7,12 @@ using FitnessTracker.Forms;
 
 namespace FitnessTracker.Controls
 {
+    /// <summary>
+    /// User interface control for managing meals and viewing their nutritional information.
+    /// Shows a list of meals with their nutrition values and provides meal management
+    /// operations. Depends on both MealService and IngredientService - uses MealService
+    /// for meal operations and IngredientService for ingredient data needed in meal editing.
+    /// </summary>
     public partial class MealControl : UserControl
     {
         private readonly MealService _mealService;

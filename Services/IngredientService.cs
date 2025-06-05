@@ -3,6 +3,12 @@ using FitnessTracker.Models;
 
 namespace FitnessTracker.Services
 {
+    /// <summary>
+    /// Manages all ingredient-related operations including CRUD operations and search.
+    /// Uses JsonDataManager for data persistence and maintains an in-memory list
+    /// for fast access. Provides validation for ingredient data and generates
+    /// unique IDs. Used by MealService to get ingredient data for nutrition calculations.
+    /// </summary>
     public class IngredientService
     {
         private readonly JsonDataManager _dataManager;

@@ -7,6 +7,12 @@ using FitnessTracker.Forms;
 
 namespace FitnessTracker.Controls
 {
+    /// <summary>
+    /// User interface control for tracking daily diet entries and viewing nutrition summaries.
+    /// Allows users to log meals they've consumed with specific serving sizes and dates.
+    /// Uses DietService for diet entry operations and MealService to get meal data for
+    /// selection. Shows daily nutrition totals and provides diet entry management.
+    /// </summary>
     public partial class DietTrackingControl : UserControl
     {
         private readonly DietService _dietService;

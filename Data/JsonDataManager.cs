@@ -6,6 +6,12 @@ using FitnessTracker.Models;
 
 namespace FitnessTracker.Data
 {
+    /// <summary>
+    /// Handles all data persistence operations using JSON files for storage.
+    /// Saves and loads ingredients, meals, and diet entries to/from JSON files
+    /// in the Data directory. Acts as the data access layer that isolates
+    /// the rest of the app from storage details. Uses System.Text.Json for serialization.
+    /// </summary>
     public class JsonDataManager
     {
         private readonly string _dataDirectory;
@@ -61,7 +67,7 @@ namespace FitnessTracker.Data
             {
                 JsonSerializerOptions options = new JsonSerializerOptions
                 {
-                    WriteIndented = true
+                    WriteIndented = true  // SHOULD BE GLOBAL CONSTANT!!
                 };
 
                 string jsonContent = JsonSerializer.Serialize(ingredients, options);

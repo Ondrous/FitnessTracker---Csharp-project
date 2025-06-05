@@ -53,98 +53,57 @@ public class JsonDataManager
 - **Benefits**: Centralized program rules, reusable across UI components
 - **Dependency Chain**: `DietService` → `MealService` → `IngredientService`
 
-## API Design and Extensibility
+## Main Components
 
-### Service Layer API
+### Data Models
+
+#### Ingredient
+Represents a single food ingredient with its nutritional values per 100g. This is the basic building block used by meals to calculate total nutrition. Contains methods to calculate nutrition values for specific weights and uses NutritionConstants for consistent weight calculations across the app.
+
+#### Meal
+Represents a meal composed of multiple ingredients with their quantities. Acts as a recipe that can calculate its own nutritional values per 100g by combining all ingredient nutritions proportionally. Used by DietEntry to track what was actually consumed and by MealService for nutrition calculations.
+
+#### DietEntry
+Records when and how much of a specific meal was consumed. Links a meal to a consumption time and serving size (in grams). This is what creates the actual diet log - each entry represents one instance of eating a meal. Used by DietService for tracking daily nutrition.
+
+#### MealIngredient
+Links an ingredient to a meal with a specific quantity in grams. This is a simple data structure that connects ingredient IDs to their amounts within a meal recipe. Used by Meal class to store its ingredient composition.
+
+#### NutritionSummary
+Aggregates nutritional values for meals, diet entries, or daily totals. Provides methods to add nutrition values together and reset totals. Used throughout the app to calculate and display combined nutrition information from multiple sources like ingredients in a meal or meals in a day.
+
+### Data Access Layer
+
+#### JsonDataManager
+Handles all data persistence operations using JSON files for storage. Saves and loads ingredients, meals, and diet entries to/from JSON files in the Data directory. Acts as the data access layer that isolates the rest of the app from storage details. Uses System.Text.Json for serialization.
+
+### Service Layer
 
 #### IngredientService
-```csharp
-public class IngredientService
-{
-    // CRUD Operations
-    public List<Ingredient> GetAllIngredients()
-    public Ingredient? GetIngredientById(int id)
-    public List<Ingredient> SearchIngredients(string searchTerm)
-    public void AddIngredient(Ingredient ingredient)
-    public void UpdateIngredient(Ingredient ingredient)
-    public void DeleteIngredient(int id)
-}
-```
+Manages all ingredient-related operations including CRUD operations and search. Uses JsonDataManager for data persistence and maintains an in-memory list for fast access. Provides validation for ingredient data and generates unique IDs. Used by MealService to get ingredient data for nutrition calculations.
 
 #### MealService
-```csharp
-public class MealService
-{
-    // CRUD Operations
-    public List<Meal> GetAllMeals()
-    public Meal? GetMealById(int id)
-    public List<Meal> SearchMeals(string searchTerm)
-    public void AddMeal(Meal meal)
-    public void UpdateMeal(Meal meal)
-    public void DeleteMeal(int id)
-    
-    // Nutrition Calculations
-    public NutritionSummary CalculateMealNutrition(Meal meal)
-    public NutritionSummary CalculateMealNutritionForWeight(Meal meal, double weightInGrams)
-    public NutritionSummary GetMealNutritionPer100g(Meal meal)
-}
-```
+Manages meal operations and provides nutrition calculations for meals. Depends on IngredientService to get ingredient data for calculations. Handles meal CRUD operations and calculates nutrition values both for entire meals and for specific serving sizes. Used by DietService for diet tracking.
 
 #### DietService
-```csharp
-public class DietService
-{
-    // CRUD Operations
-    public List<DietEntry> GetAllDietEntries()
-    public List<DietEntry> GetDietEntriesForDate(DateTime date)
-    public List<DietEntry> GetDietEntriesForDateRange(DateTime startDate, DateTime endDate)
-    public void AddDietEntry(DietEntry dietEntry)
-    public void UpdateDietEntry(DietEntry dietEntry)
-    public void DeleteDietEntry(int id)
-    
-    // Analytics
-    public NutritionSummary CalculateDailyNutrition(DateTime date)
-    public NutritionSummary CalculateNutritionForDateRange(DateTime startDate, DateTime endDate)
-    public Dictionary<DateTime, NutritionSummary> GetDailyNutritionSummary(DateTime startDate, DateTime endDate)
-}
-```
+Manages diet tracking by recording meal consumption over time. Depends on MealService to get meal data and calculate nutrition values. Provides functionality to track daily nutrition, calculate nutrition for date ranges, and generate diet statistics. This is the top-level service that coordinates meal and ingredient data to provide comprehensive diet tracking.
 
-### Extensibility Points
+### Presentation Layer
 
-#### 1. Data Storage Extension
-**Current**: JSON file storage
-**Extension Point**: Replace `JsonDataManager` with database implementation
+#### MainForm
+Main application window that acts as a navigation hub between different features. Initializes all service dependencies and manages the display of different UserControls for ingredients, meals, diet tracking, and statistics. Handles navigation events and ensures proper cleanup when switching between different sections of the app.
 
-```csharp
-public interface IDataManager
-{
-    List<Ingredient> LoadIngredients();
-    void SaveIngredients(List<Ingredient> ingredients);
-    // ... other methods
-}
-```
+#### IngredientControl
+User interface control for managing ingredients in the application. Provides a grid view of ingredients with search, add, edit, and delete functionality. Uses IngredientService for all data operations and IngredientEditForm for detailed ingredient editing. Communicates with MainForm through events for navigation.
 
-#### 2. New Nutrition Calculations
-**Extension Point**: Add methods to `Meal` model and `MealService`
+#### MealControl
+User interface control for managing meals and viewing their nutritional information. Shows a list of meals with their nutrition values and provides meal management operations. Depends on both MealService and IngredientService - uses MealService for meal operations and IngredientService for ingredient data needed in meal editing.
 
-```csharp
-// Example: Add vitamin calculations
-public double GetVitaminCPer100g(List<Ingredient> allIngredients)
-{
-    // Implementation
-}
-```
+#### DietTrackingControl
+User interface control for tracking daily diet entries and viewing nutrition summaries. Allows users to log meals they've consumed with specific serving sizes and dates. Uses DietService for diet entry operations and MealService to get meal data for selection. Shows daily nutrition totals and provides diet entry management.
 
-#### 3. New UI Components
-**Extension Point**: Create new UserControls implementing navigation pattern
-
-```csharp
-public partial class NewFeatureControl : UserControl
-{
-    public event EventHandler? GoBackRequested;
-    // Implementation
-}
-```
+#### StatisticsControl
+User interface control for viewing nutrition statistics and reports over time periods. Allows users to select date ranges and generates daily nutrition summaries with totals and averages. Uses DietService to get diet entry data and calculate comprehensive nutrition statistics for analysis and tracking progress.
 
 ## Encapsulation and Data Integrity
 

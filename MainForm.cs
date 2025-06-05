@@ -5,6 +5,12 @@ using FitnessTracker.Controls;
 
 namespace FitnessTracker
 {
+    /// <summary>
+    /// Main application window that acts as a navigation hub between different features.
+    /// Initializes all service dependencies and manages the display of different UserControls
+    /// for ingredients, meals, diet tracking, and statistics. Handles navigation events
+    /// and ensures proper cleanup when switching between different sections of the app.
+    /// </summary>
     public partial class MainForm : Form
     {
         private readonly IngredientService _ingredientService;

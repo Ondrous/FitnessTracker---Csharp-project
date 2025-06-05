@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 namespace FitnessTracker.Models
 {
+    /// <summary>
+    /// Represents a meal composed of multiple ingredients with their quantities.
+    /// Acts as a recipe that can calculate its own nutritional values per 100g
+    /// by combining all ingredient nutritions proportionally. Used by DietEntry
+    /// to track what was actually consumed and by MealService for nutrition calculations.
+    /// </summary>
     public class Meal
     {
         public int Id { get; set; }

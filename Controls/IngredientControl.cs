@@ -7,6 +7,12 @@ using FitnessTracker.Forms;
 
 namespace FitnessTracker.Controls
 {
+    /// <summary>
+    /// User interface control for managing ingredients in the application.
+    /// Provides a grid view of ingredients with search, add, edit, and delete functionality.
+    /// Uses IngredientService for all data operations and IngredientEditForm for
+    /// detailed ingredient editing. Communicates with MainForm through events for navigation.
+    /// </summary>
     public partial class IngredientControl : UserControl
     {
         private readonly IngredientService _ingredientService;

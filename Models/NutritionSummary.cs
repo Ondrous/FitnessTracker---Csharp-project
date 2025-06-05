@@ -1,5 +1,11 @@
 namespace FitnessTracker.Models
 {
+    /// <summary>
+    /// Aggregates nutritional values for meals, diet entries, or daily totals.
+    /// Provides methods to add nutrition values together and reset totals.
+    /// Used throughout the app to calculate and display combined nutrition information
+    /// from multiple sources like ingredients in a meal or meals in a day.
+    /// </summary>
     public class NutritionSummary
     {
         public double TotalCalories { get; set; }

@@ -2,6 +2,12 @@ using System;
 
 namespace FitnessTracker.Models
 {
+    /// <summary>
+    /// Records when and how much of a specific meal was consumed.
+    /// Links a meal to a consumption time and serving size (in grams).
+    /// This is what creates the actual diet log - each entry represents
+    /// one instance of eating a meal. Used by DietService for tracking daily nutrition.
+    /// </summary>
     public class DietEntry
     {
         public int Id { get; set; }

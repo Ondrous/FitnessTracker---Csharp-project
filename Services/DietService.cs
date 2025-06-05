@@ -3,6 +3,13 @@ using FitnessTracker.Models;
 
 namespace FitnessTracker.Services
 {
+    /// <summary>
+    /// Manages diet tracking by recording meal consumption over time.
+    /// Depends on MealService to get meal data and calculate nutrition values.
+    /// Provides functionality to track daily nutrition, calculate nutrition for date
+    /// ranges, and generate diet statistics. This is the top-level service that
+    /// coordinates meal and ingredient data to provide comprehensive diet tracking.
+    /// </summary>
     public class DietService
     {
         private readonly JsonDataManager _dataManager;

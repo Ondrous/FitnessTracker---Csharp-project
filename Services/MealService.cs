@@ -3,6 +3,12 @@ using FitnessTracker.Models;
 
 namespace FitnessTracker.Services
 {
+    /// <summary>
+    /// Manages meal operations and provides nutrition calculations for meals.
+    /// Depends on IngredientService to get ingredient data for calculations.
+    /// Handles meal CRUD operations and calculates nutrition values both for entire
+    /// meals and for specific serving sizes. Used by DietService for diet tracking.
+    /// </summary>
     public class MealService
     {
         private readonly JsonDataManager _dataManager;
